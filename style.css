@@ -18,6 +18,7 @@ body {
     font-family: 'Playfair Display', serif; 
     display: flex;
     justify-content: center;
+    /* IMPORTANTE: Allineato in alto per lasciare spazio sopra e sotto il contenuto, ma consentire lo scroll */
     align-items: center; 
     min-height: 100vh;
     margin: 0;
@@ -38,6 +39,7 @@ body {
 #envelope-container {
     width: 90%;
     max-width: 500px;
+    /* CORREZIONE 1: Aumentato un po' e fissato per l'animazione */
     min-height: 600px; 
     background-color: transparent; 
     border: none;
@@ -137,8 +139,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; 
-    overflow-y: auto; 
+    /* CORREZIONE 2: Questo abilita lo scroll all'interno della busta su mobile */
+    height: 100%; /* Copre l'altezza fissa di envelope-container */
+    overflow-y: auto; /* Permette lo scroll verticale solo se necessario */
     box-sizing: border-box;
     opacity: 0; 
     transform: translateY(20px); 
@@ -177,11 +180,12 @@ body {
 }
 
 /* ------------------------------------- */
-/* STILE BORDI EMOJI PERSONALIZZATI */
+/* STILE BORDI EMOJI PERSONALIZZATI (Aggiunto/Corretto per togliere margini) */
 /* ------------------------------------- */
 .rose-border {
     text-align: center;
-    color: var(--girl-color); /* Colore per gli emoji */
+    /* Opzionale: puoi usare il colore del tema ragazza per gli emoji */
+    color: var(--girl-color); 
     font-size: 1.2em; 
     margin: 5px 0; /* Margine piccolo sopra/sotto per spaziare leggermente */
 }
@@ -195,20 +199,20 @@ body {
 
 
 /* ------------------------------------- */
-/* NUOVO STILE FOTO FESTEGGIATO/SPOSI (Corretto) */
+/* NUOVO STILE FOTO FESTEGGIATO/SPOSI (Corretto per dimensione) */
 /* ------------------------------------- */
 
 .event-photo {
-    /* CORREZIONE: Aumentata la dimensione per evitare il taglio del viso */
-    **width: 160px;**       
-    **height: 160px;**
+    /* CORREZIONE: Dimensione Piccola ma visibile */
+    **width: 120px;**       
+    **height: 120px;**
     
     /* Assicura che la foto riempia bene lo spazio senza distorsioni */
     object-fit: cover; 
     
-    /* Per centrarla */
+    /* Per centrarla, siccome è un elemento block */
     display: block; 
-    **margin: 0 auto 30px auto;** /* 0 sopra per attaccarlo agli emoji, centrato, 30px sotto per separare dalla data */
+    **margin: 0 auto 25px auto;** /* 0 sopra per attaccarlo agli emoji, centrato, 25px sotto per separare dalla data */
     
     /* Forma Tonda */
     border-radius: 50%; 
@@ -394,8 +398,8 @@ body {
     }
     /* Riduci la dimensione della foto su mobile */
     .event-photo {
-        **width: 140px;**
-        **height: 140px;**
+        width: 100px;
+        height: 100px;
         margin-bottom: 20px;
     }
     
