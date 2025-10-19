@@ -180,12 +180,11 @@ body {
 }
 
 /* ------------------------------------- */
-/* STILE BORDI EMOJI PERSONALIZZATI (Aggiunto/Corretto per togliere margini) */
+/* STILE BORDI EMOJI PERSONALIZZATI */
 /* ------------------------------------- */
 .rose-border {
     text-align: center;
-    /* Opzionale: puoi usare il colore del tema ragazza per gli emoji */
-    color: var(--girl-color); 
+    color: var(--girl-color); /* Colore per gli emoji */
     font-size: 1.2em; 
     margin: 5px 0; /* Margine piccolo sopra/sotto per spaziare leggermente */
 }
@@ -199,20 +198,20 @@ body {
 
 
 /* ------------------------------------- */
-/* NUOVO STILE FOTO FESTEGGIATO/SPOSI (Corretto per dimensione) */
+/* NUOVO STILE FOTO FESTEGGIATO/SPOSI (Corretto) */
 /* ------------------------------------- */
 
 .event-photo {
-    /* CORREZIONE: Dimensione Piccola ma visibile */
-    **width: 120px;**       
-    **height: 120px;**
+    /* CORREZIONE: Aumentata la dimensione per evitare il taglio del viso */
+    **width: 160px;**       
+    **height: 160px;**
     
     /* Assicura che la foto riempia bene lo spazio senza distorsioni */
     object-fit: cover; 
     
-    /* Per centrarla, siccome è un elemento block */
+    /* Per centrarla */
     display: block; 
-    **margin: 0 auto 25px auto;** /* 0 sopra per attaccarlo agli emoji, centrato, 25px sotto per separare dalla data */
+    **margin: 0 auto 30px auto;** /* 0 sopra per attaccarlo agli emoji, centrato, 30px sotto per separare dalla data */
     
     /* Forma Tonda */
     border-radius: 50%; 
@@ -221,7 +220,6 @@ body {
     border: 3px solid var(--gold); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
-
 /* ------------------------------------- */
 /* STILE PULSANTI DI AZIONE - CERCHIO */
 /* ------------------------------------- */
