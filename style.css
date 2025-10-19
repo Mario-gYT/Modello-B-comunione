@@ -185,8 +185,8 @@ body {
 
 .event-photo {
     /* Dimensione non troppo grande */
-    width: 160px;       
-    height: 160px;
+    width: 50px;       
+    height: 50px;
     
     /* Assicura che la foto riempia bene lo spazio senza distorsioni */
     object-fit: cover; 
@@ -196,10 +196,10 @@ body {
     margin: 15px auto 25px auto; /* Margine sopra, centrato, margine sotto per separarlo dalla data */
     
     /* Forma Tonda */
-    border-radius: 50%; 
+    border-radius: 55%; 
     
     /* Cornice elegante in oro */
-    border: 3px solid var(--gold); 
+    border: 2px solid var(--gold); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
