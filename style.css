@@ -203,15 +203,15 @@ body {
 
 .event-photo {
     /* CORREZIONE: Aumentata la dimensione per evitare il taglio del viso */
-    **width: 160px;**       
-    **height: 160px;**
+    width: 180px;       
+    height: 180px;
     
     /* Assicura che la foto riempia bene lo spazio senza distorsioni */
     object-fit: cover; 
     
     /* Per centrarla */
     display: block; 
-    **margin: 0 auto 30px auto;** /* 0 sopra per attaccarlo agli emoji, centrato, 30px sotto per separare dalla data */
+    margin: 0 auto 30px auto; /* 0 sopra per attaccarlo agli emoji, centrato, 30px sotto per separare dalla data */
     
     /* Forma Tonda */
     border-radius: 50%; 
