@@ -18,7 +18,6 @@ body {
     font-family: 'Playfair Display', serif; 
     display: flex;
     justify-content: center;
-    /* IMPORTANTE: Allineato in alto per lasciare spazio sopra e sotto il contenuto, ma consentire lo scroll */
     align-items: center; 
     min-height: 100vh;
     margin: 0;
@@ -39,7 +38,6 @@ body {
 #envelope-container {
     width: 90%;
     max-width: 500px;
-    /* CORREZIONE 1: Aumentato un po' e fissato per l'animazione */
     min-height: 600px; 
     background-color: transparent; 
     border: none;
@@ -47,7 +45,7 @@ body {
     text-align: center;
     box-shadow: none;
     position: relative;
-    overflow: hidden; /* Importante per l'effetto busta */
+    overflow: hidden; 
 }
 
 /* ------------------------------------- */
@@ -110,13 +108,11 @@ body {
 /* ------------------------------------- */
 
 #toggle:checked ~ #envelope-container #closed-state {
-    /* La busta si apre simulando uno scivolamento verso il basso */
     transform: translateY(100vh); 
     opacity: 0;
 }
 
 #toggle:checked ~ #envelope-container .envelope-flap {
-    /* Il lembo ruota all'apertura */
     transform: rotateX(180deg) translateY(-100%);
 }
 
@@ -139,9 +135,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    /* CORREZIONE 2: Questo abilita lo scroll all'interno della busta su mobile */
-    height: 100%; /* Copre l'altezza fissa di envelope-container */
-    overflow-y: auto; /* Permette lo scroll verticale solo se necessario */
+    height: 100%; 
+    overflow-y: auto; 
     box-sizing: border-box;
     opacity: 0; 
     transform: translateY(20px); 
@@ -161,7 +156,7 @@ body {
     font-size: 5em;
     font-weight: 400;
     color: var(--black-text);
-    margin: 0; /* Rimuovi il margine di default per attaccarlo agli emoji */
+    margin: 0; 
     line-height: 1.2;
 }
 
@@ -180,42 +175,44 @@ body {
 }
 
 /* ------------------------------------- */
-/* STILE BORDI EMOJI PERSONALIZZATI (Aggiunto/Corretto per togliere margini) */
+/* STILE BORDI EMOJI PERSONALIZZATI */
 /* ------------------------------------- */
 .rose-border {
     text-align: center;
-    /* Opzionale: puoi usare il colore del tema ragazza per gli emoji */
     color: var(--girl-color); 
     font-size: 1.2em; 
-    margin: 5px 0; /* Margine piccolo sopra/sotto per spaziare leggermente */
+    margin: 5px 0; 
 }
 
 .rose-border.top-border {
-    margin-top: 15px; /* Spazio sotto il testo iniziale */
+    margin-top: 15px; 
+    margin-bottom: 5px;
 }
 .rose-border.bottom-border {
+    margin-top: 5px;
     margin-bottom: 25px; /* Spazio sotto gli emoji e sopra la foto */
 }
 
 
 /* ------------------------------------- */
-/* NUOVO STILE FOTO FESTEGGIATO/SPOSI (Corretto per dimensione) */
+/* NUOVO STILE FOTO FESTEGGIATO (Correzione definitiva) */
 /* ------------------------------------- */
 
 .event-photo {
-    /* CORREZIONE: Dimensione Piccola ma visibile */
-    **width: 120px;**       
-    **height: 120px;**
+    /* CORREZIONE 1: Dimensioni più grandi e rettangolari per mostrare l'intera figura */
+    **width: 80%;** /* Larghezza relativa al contenitore */       
+    **max-width: 250px;** /* Non superare questa larghezza su schermi grandi */
+    **height: auto;** /* Altezza automatica per non tagliare l'immagine (importante!) */
     
-    /* Assicura che la foto riempia bene lo spazio senza distorsioni */
-    object-fit: cover; 
+    /* Assicura che la foto non si deformi */
+    object-fit: contain; 
     
-    /* Per centrarla, siccome è un elemento block */
+    /* Per centrarla */
     display: block; 
-    **margin: 0 auto 25px auto;** /* 0 sopra per attaccarlo agli emoji, centrato, 25px sotto per separare dalla data */
+    **margin: 0 auto 30px auto;** /* 0 sopra per attaccarlo agli emoji, centrato, 30px sotto per separare dalla data */
     
-    /* Forma Tonda */
-    border-radius: 50%; 
+    /* CORREZIONE 2: Rimuovo il border-radius per renderla rettangolare/quadrata, mostrando l'intera foto */
+    **border-radius: 5px;** /* Un leggero bordo per un tocco finale */
     
     /* Cornice elegante in oro */
     border: 3px solid var(--gold); 
@@ -364,7 +361,7 @@ body {
 }
 
 .social-buttons .action-button {
-    /* CORREZIONE: Stile più compatto e meno invadente, usando il colore social */
+    /* Stile più compatto e meno invadente, usando il colore social */
     padding: 8px 12px;
     font-size: 0.8em;
     border-radius: 5px; 
@@ -396,10 +393,10 @@ body {
     #open-state {
         padding: 30px 15px; 
     }
-    /* Riduci la dimensione della foto su mobile */
+    /* Riduci leggermente la foto su mobile */
     .event-photo {
-        width: 100px;
-        height: 100px;
+        width: 90%;
+        max-width: 200px;
         margin-bottom: 20px;
     }
     
