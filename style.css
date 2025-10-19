@@ -11,7 +11,7 @@
     --social-color: #6c757d; 
 }
 
-/* Stile base (Nessuna modifica qui) */
+/* Stile base */
 body {
     background-color: #000; 
     color: #333; 
@@ -32,7 +32,7 @@ body {
 
 
 /* ------------------------------------- */
-/* CONTENITORE E STATI (Nessuna modifica qui) */
+/* CONTENITORE E STATI */
 /* ------------------------------------- */
 
 #envelope-container {
@@ -47,6 +47,10 @@ body {
     position: relative;
     overflow: hidden;
 }
+
+/* ------------------------------------- */
+/* STATO CHIUSO (Animazione Busta) */
+/* ------------------------------------- */
 
 #closed-state {
     position: absolute;
@@ -73,6 +77,7 @@ body {
     z-index: 103;
 }
 
+/* La Finta Busta (il lembo) */
 .envelope-flap {
     position: absolute;
     top: 0;
@@ -99,7 +104,7 @@ body {
 }
 
 /* ------------------------------------- */
-/* LOGICA DI APERTURA BUSTA (Nessuna modifica qui) */
+/* LOGICA DI APERTURA BUSTA */
 /* ------------------------------------- */
 
 #toggle:checked ~ #envelope-container #closed-state {
@@ -151,7 +156,7 @@ body {
     font-size: 5em;
     font-weight: 400;
     color: var(--black-text);
-    /* CORREZIONE: Imposta margine a 0 per incollarlo ai bordi emoji */
+    /* Margine a 0 per incollarlo ai bordi emoji */
     margin: 0; 
     line-height: 1.2;
 }
@@ -171,46 +176,47 @@ body {
 }
 
 /* ------------------------------------- */
-/* STILE FOTO FESTEGGIATO/SPOSI */
+/* STILE FOTO FESTEGGIATO (Piccola e Tonda) */
 /* ------------------------------------- */
 
 .event-photo {
-    width: 160px;       
-    height: 160px;
+    /* Dimensione Piccola */
+    width: 120px;       
+    height: 120px;
     object-fit: cover; 
     display: block; 
-    /* CORREZIONE: Margine superiore a 0 per incollarlo al bordo emoji, ampio margine sotto */
+    /* Margini: 0 sopra, centrato, 30px sotto (per la data) */
     margin: 0 auto 30px auto; 
     border-radius: 50%; 
     border: 3px solid var(--gold); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+
 /* ------------------------------------- */
-/* NUOVO STILE BORDI EMOJI PERSONALIZZATI (Spazi come richiesto) */
+/* STILE BORDI EMOJI PERSONALIZZATI (Spazi come richiesto) */
 /* ------------------------------------- */
 
 .rose-border {
     text-align: center;
-    color: var(--girl-color); /* Usa il colore del tema ragazza per gli emoji */
+    color: var(--girl-color); /* Colore di default per l'emoji (rosa) */
     font-size: 1.2em;
-    margin: 0; /* Rimuove i margini predefiniti del <p> */
+    margin: 0; 
 }
 
 .rose-border.top-border {
-    /* Spazio tra il messaggio iniziale e il bordo superiore */
     margin-top: 15px; 
-    margin-bottom: 5px; 
+    margin-bottom: 5px; /* Spazio piccolo sopra il nome */
 }
 
 .rose-border.bottom-border {
-    /* Spazio tra il bordo inferiore e la foto */
-    margin-top: 5px; 
-    margin-bottom: 20px; 
+    margin-top: 5px; /* Spazio piccolo sotto il nome */
+    margin-bottom: 25px; /* Spazio maggiore sopra la foto */
 }
 
+
 /* ------------------------------------- */
-/* STILE PULSANTI DI AZIONE - CERCHIO (Adattati al tema) */
+/* STILE PULSANTI DI AZIONE - CERCHIO (Base) */
 /* ------------------------------------- */
 
 .buttons-circle-container {
@@ -221,7 +227,6 @@ body {
     max-width: 400px;
 }
 
-/* Base per i colori dei pulsanti */
 .circle-button {
     text-decoration: none;
     display: flex;
@@ -231,8 +236,8 @@ body {
     width: 80px; 
     height: 80px; 
     border-radius: 50%; 
-    /* I bordi e i colori di default vengono sovrascritti dai temi */
-    border: 2px solid var(--gold); 
+    /* Colori di base che saranno sovrascritti dalla logica del sesso */
+    border: 2px solid var(--gold); 
     color: var(--gold);
     background-color: transparent;
     transition: all 0.3s;
@@ -240,20 +245,14 @@ body {
 }
 
 .circle-button:hover {
-    background-color: var(--gold); /* Hover di default */
-    color: var(--paper-white);
+    /* Il colore di sfondo e testo hover è gestito dalla logica boy/girl qui sotto */
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.circle-button:hover .button-icon {
-    color: var(--paper-white);
 }
 
 .button-icon {
     font-size: 1.5em; 
     line-height: 1;
-    color: var(--gold);
     transition: color 0.3s;
 }
 
@@ -263,62 +262,49 @@ body {
     font-weight: 600;
     color: var(--black-text); 
 }
-.circle-button:hover .button-text {
-    color: var(--paper-white);
-}
+
 
 /* ------------------------------------- */
 /* LOGICA COLORE PULSANTI IN BASE AL SESSO */
+/* Applica ROSA o AZZURRO a TUTTI i pulsanti rotondi in base alla classe #open-state */
 /* ------------------------------------- */
-/* Questa sezione sovrascrive i colori gold/black per tutti i .circle-button */
 
-/* RAGAZZO: Applica AZZURRO a TUTTI i pulsanti rotondi */
+/* RAGAZZO: Applica AZZURRO */
 #open-state.boy .circle-button {
     border-color: var(--boy-color);
-    color: var(--boy-color);
+    color: var(--boy-color); /* Colore testo default */
 }
-#open-state.boy .circle-button .button-icon {
+#open-state.boy .circle-button .button-icon,
+#open-state.boy .circle-button .button-text {
     color: var(--boy-color);
 }
 #open-state.boy .circle-button:hover {
     background-color: var(--boy-color);
-    color: var(--paper-white);
 }
 #open-state.boy .circle-button:hover .button-text,
 #open-state.boy .circle-button:hover .button-icon {
-    color: var(--paper-white);
+    color: var(--paper-white); /* Colore testo hover */
 }
-
-/* RAGAZZA: Applica ROSA a TUTTI i pulsanti rotondi (compresi Mappa e Conferma) */
+/* RAGAZZA: Applica ROSA */
 #open-state.girl .circle-button {
     border-color: var(--girl-color);
-    color: var(--girl-color);
+    color: var(--girl-color); /* Colore testo default */
 }
-#open-state.girl .circle-button .button-icon {
+#open-state.girl .circle-button .button-icon,
+#open-state.girl .circle-button .button-text {
     color: var(--girl-color);
 }
 #open-state.girl .circle-button:hover {
     background-color: var(--girl-color);
-    color: var(--paper-white);
 }
 #open-state.girl .circle-button:hover .button-text,
 #open-state.girl .circle-button:hover .button-icon {
-    color: var(--paper-white);
+    color: var(--paper-white); /* Colore testo hover */
 }
 
-/* Rimuoviamo la vecchia regola specifica per .whatsapp-confirm 
-   perché è gestita dalle nuove regole .boy/.girl qui sopra. */
-/* NON C'È PIÙ: .circle-button.whatsapp-confirm */
-
 
 /* ------------------------------------- */
-/* DECORAZIONI PER SESSO (Rimosse perché non usate) */
-/* ------------------------------------- */
-/* Rimosse le regole .decorations, .teddy-bear, .balloons */
-
-
-/* ------------------------------------- */
-/* COUNTDOWN (Nessuna modifica qui) */
+/* COUNTDOWN */
 /* ------------------------------------- */
 #countdown-container {
     margin-top: 30px;
@@ -342,7 +328,7 @@ body {
 }
 
 /* ------------------------------------- */
-/* PULSANTI SOCIAL (Nessuna modifica qui) */
+/* PULSANTI SOCIAL */
 /* ------------------------------------- */
 .buttons-container {
     display: flex;
@@ -385,13 +371,15 @@ body {
 /* ------------------------------------- */
 
 @media (max-width: 600px) {
+    
     #open-state {
         padding: 30px 15px; 
     }
-    /* Riduci la dimensione della foto su schermi piccoli */
+    
+    /* Immagine ancora più piccola su schermi stretti */
     .event-photo {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         margin-bottom: 20px;
     }
     
