@@ -179,6 +179,7 @@ body {
     margin: 20px auto;
 }
 
+he la foto riempia bene lo spazio senza distorsioni */ object-fit: cover; /* Per centrarla, siccome è un elemento block */ display: block; margin: 15px auto 25px auto; /* Margine sopra, centrato, margine sotto per separarlo dalla data */ /* Forma Tonda */ border-radius: 50%;
 
 /* ------------------------------------- */
 /* STILE PULSANTI DI AZIONE - CERCHIO */
