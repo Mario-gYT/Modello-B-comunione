@@ -8,7 +8,7 @@
     --paper-white: #FDFDFD; 
     --boy-color: #79A6D2; 
     --girl-color: #F8BBD0; 
-    --social-color: #6c757d; /* Colore per i pulsanti social */
+    --social-color: #6c757d; 
 }
 
 /* Stile base */
@@ -190,31 +190,28 @@ body {
 }
 .rose-border.bottom-border {
     margin-top: 5px;
-    margin-bottom: 25px; /* Spazio sotto gli emoji e sopra la foto */
+    margin-bottom: 25px; 
 }
 
 
 /* ------------------------------------- */
-/* NUOVO STILE FOTO FESTEGGIATO (Correzione definitiva) */
+/* NUOVO STILE FOTO FESTEGGIATO (Corretto e Tondo) */
 /* ------------------------------------- */
 
 .event-photo {
-    /* CORREZIONE 1: Dimensioni più grandi e rettangolari per mostrare l'intera figura */
-    **width: 80%;** /* Larghezza relativa al contenitore */       
-    **max-width: 250px;** /* Non superare questa larghezza su schermi grandi */
-    **height: auto;** /* Altezza automatica per non tagliare l'immagine (importante!) */
+    /* CORREZIONE: Dimensioni fisse per un look compatto e centrato */
+    **width: 160px;**       
+    **height: 160px;**
     
-    /* Assicura che la foto non si deformi */
-    object-fit: contain; 
+    /* Mantiene l'area centrale visibile, tagliando i bordi extra dell'immagine */
+    **object-fit: cover;**  
     
-    /* Per centrarla */
     display: block; 
-    **margin: 0 auto 30px auto;** /* 0 sopra per attaccarlo agli emoji, centrato, 30px sotto per separare dalla data */
+    margin: 0 auto 30px auto; 
     
-    /* CORREZIONE 2: Rimuovo il border-radius per renderla rettangolare/quadrata, mostrando l'intera foto */
-    **border-radius: 5px;** /* Un leggero bordo per un tocco finale */
+    /* CORREZIONE: Ritorna al bordo circolare */
+    **border-radius: 50%;** 
     
-    /* Cornice elegante in oro */
     border: 3px solid var(--gold); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
@@ -344,7 +341,7 @@ body {
 }
 
 /* ------------------------------------- */
-/* PULSANTI SOCIAL (CORREZIONE 3: Stili aggiornati per essere più coerenti) */
+/* PULSANTI SOCIAL */
 /* ------------------------------------- */
 .buttons-container {
     display: flex;
@@ -361,7 +358,6 @@ body {
 }
 
 .social-buttons .action-button {
-    /* Stile più compatto e meno invadente, usando il colore social */
     padding: 8px 12px;
     font-size: 0.8em;
     border-radius: 5px; 
@@ -371,14 +367,13 @@ body {
     transition: background-color 0.3s, color 0.3s;
     text-decoration: none;
     display: inline-block;
-    white-space: nowrap; /* Mantiene il testo su una riga */
+    white-space: nowrap; 
 }
 .social-buttons .action-button:hover {
     background-color: var(--social-color);
     color: var(--paper-white);
 }
 
-/* Rimuove lo stile base e non specifico dell'action-button se esistente */
 .action-button {
     text-decoration: none;
     display: inline-block;
@@ -389,18 +384,16 @@ body {
 /* ------------------------------------- */
 
 @media (max-width: 600px) {
-    /* Riduci il padding generale su schermi più piccoli */
     #open-state {
         padding: 30px 15px; 
     }
-    /* Riduci leggermente la foto su mobile */
+    /* Adatta la foto su mobile, leggermente più piccola */
     .event-photo {
-        width: 90%;
-        max-width: 200px;
+        width: 140px;
+        height: 140px;
         margin-bottom: 20px;
     }
     
-    /* Riduci la dimensione dei pulsanti cerchio su mobile */
     .buttons-circle-container {
         gap: 10px; 
     }
