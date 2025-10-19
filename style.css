@@ -3,28 +3,27 @@
 
 /* Variabili Colori */
 :root {
-    --gold: #A68E5D; 
-    --black-text: #222222; 
-    --paper-white: #FDFDFD; 
-    --boy-color: #79A6D2; 
-    --girl-color: #F8BBD0; 
-    --social-color: #6c757d; /* Colore per i pulsanti social */
+    --gold: #A68E5D; 
+    --black-text: #222222; 
+    --paper-white: #FDFDFD; 
+    --boy-color: #79A6D2; /* Azzurro */
+    --girl-color: #F8BBD0; /* Rosa */
+    --social-color: #6c757d; 
 }
 
-/* Stile base */
+/* Stile base (Nessuna modifica qui) */
 body {
-    background-color: #000; 
-    color: #333; 
-    font-family: 'Playfair Display', serif; 
-    display: flex;
-    justify-content: center;
-    /* IMPORTANTE: Allineato in alto per lasciare spazio sopra e sotto il contenuto, ma consentire lo scroll */
-    align-items: center; 
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-x: hidden; 
+    background-color: #000; 
+    color: #333; 
+    font-family: 'Playfair Display', serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden; 
 }
 
 .gold-text { color: var(--gold); }
@@ -33,97 +32,89 @@ body {
 
 
 /* ------------------------------------- */
-/* CONTENITORE E STATI */
+/* CONTENITORE E STATI (Nessuna modifica qui) */
 /* ------------------------------------- */
 
 #envelope-container {
-    width: 90%;
-    max-width: 500px;
-    /* CORREZIONE 1: Aumentato un po' e fissato per l'animazione */
-    min-height: 600px; 
-    background-color: transparent; 
-    border: none;
-    padding: 0;
-    text-align: center;
-    box-shadow: none;
-    position: relative;
-    overflow: hidden; /* Importante per l'effetto busta */
+    width: 90%;
+    max-width: 500px;
+    min-height: 600px; 
+    background-color: transparent; 
+    border: none;
+    padding: 0;
+    text-align: center;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
 }
 
-/* ------------------------------------- */
-/* STATO CHIUSO (Animazione Busta) */
-/* ------------------------------------- */
-
 #closed-state {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--paper-white); 
-    border: 1px solid var(--gold); 
-    border-radius: 5px;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.8s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--paper-white); 
+    border: 1px solid var(--gold); 
+    border-radius: 5px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s ease-in-out;
 }
 
 #closed-state h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 103;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 103;
 }
 
-/* La Finta Busta (il lembo) */
 .envelope-flap {
-    position: absolute;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 150px 250px 0 250px;
-    border-color: #f0f0f0 transparent transparent transparent; 
-    z-index: 102;
-    cursor: pointer;
-    transition: transform 0.8s, border-width 0.8s;
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 150px 250px 0 250px;
+    border-color: #f0f0f0 transparent transparent transparent; 
+    z-index: 102;
+    cursor: pointer;
+    transition: transform 0.8s, border-width 0.8s;
 }
 
 .open-label {
-    position: absolute;
-    bottom: 10%;
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    padding: 8px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    z-index: 101;
-    transition: opacity 0.3s;
+    position: absolute;
+    bottom: 10%;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 101;
+    transition: opacity 0.3s;
 }
 
 /* ------------------------------------- */
-/* LOGICA DI APERTURA BUSTA */
+/* LOGICA DI APERTURA BUSTA (Nessuna modifica qui) */
 /* ------------------------------------- */
 
 #toggle:checked ~ #envelope-container #closed-state {
-    /* La busta si apre simulando uno scivolamento verso il basso */
-    transform: translateY(100vh); 
-    opacity: 0;
+    transform: translateY(100vh); 
+    opacity: 0;
 }
 
 #toggle:checked ~ #envelope-container .envelope-flap {
-    /* Il lembo ruota all'apertura */
-    transform: rotateX(180deg) translateY(-100%);
+    transform: rotateX(180deg) translateY(-100%);
 }
 
 #toggle:checked ~ #envelope-container #open-state {
-    display: block; 
-    opacity: 1; 
-    transform: translateY(0);
+    display: block; 
+    opacity: 1; 
+    transform: translateY(0);
 }
 
 /* ------------------------------------- */
@@ -131,241 +122,262 @@ body {
 /* ------------------------------------- */
 
 #open-state {
-    background-color: var(--paper-white); 
-    border: 1px solid var(--gold); 
-    border-radius: 5px; 
-    padding: 40px;
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* CORREZIONE 2: Questo abilita lo scroll all'interno della busta su mobile */
-    height: 100%; /* Copre l'altezza fissa di envelope-container */
-    overflow-y: auto; /* Permette lo scroll verticale solo se necessario */
-    box-sizing: border-box;
-    opacity: 0; 
-    transform: translateY(20px); 
-    transition: opacity 0.6s 0.2s, transform 0.6s 0.2s;
+    background-color: var(--paper-white); 
+    border: 1px solid var(--gold); 
+    border-radius: 5px; 
+    padding: 40px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    overflow-y: auto; 
+    box-sizing: border-box;
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.6s 0.2s, transform 0.6s 0.2s;
 }
 
 .small-text {
-    font-size: 0.9em;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: 'Playfair Display', serif;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
 }
 
 .cursive-name {
-    font-family: 'Great Vibes', cursive;
-    font-size: 5em;
-    font-weight: 400;
-    color: var(--black-text);
-    margin: 0;
-    line-height: 1.2;
+    font-family: 'Great Vibes', cursive;
+    font-size: 5em;
+    font-weight: 400;
+    color: var(--black-text);
+    /* CORREZIONE: Imposta margine a 0 per incollarlo ai bordi emoji */
+    margin: 0; 
+    line-height: 1.2;
 }
 
 .date-time {
-    font-size: 1.1em;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
 }
 
 .separator {
-    width: 60%;
-    height: 1px;
-    background-color: var(--gold);
-    margin: 20px auto;
+    width: 60%;
+    height: 1px;
+    background-color: var(--gold);
+    margin: 20px auto;
 }
 
 /* ------------------------------------- */
-/* NUOVO STILE BORDI EMOJI PERSONALIZZATI */
+/* STILE FOTO FESTEGGIATO/SPOSI */
+/* ------------------------------------- */
+
+.event-photo {
+    width: 160px;       
+    height: 160px;
+    object-fit: cover; 
+    display: block; 
+    /* CORREZIONE: Margine superiore a 0 per incollarlo al bordo emoji, ampio margine sotto */
+    margin: 0 auto 30px auto; 
+    border-radius: 50%; 
+    border: 3px solid var(--gold); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* ------------------------------------- */
+/* NUOVO STILE BORDI EMOJI PERSONALIZZATI (Spazi come richiesto) */
 /* ------------------------------------- */
 
 .rose-border {
-    /* Assicurati che il testo sia centrato */
-    text-align: center;
-    /* Usa il colore del tema ragazza (rosa) per l'emoji */
-    color: var(--girl-color); 
-    /* Rimuove i margini di default del <p> */
-    font-size: 1.2em; /* Dimensione emoji */
+    text-align: center;
+    color: var(--girl-color); /* Usa il colore del tema ragazza per gli emoji */
+    font-size: 1.2em;
+    margin: 0; /* Rimuove i margini predefiniti del <p> */
 }
 
 .rose-border.top-border {
-    /* Spazio tra il messaggio iniziale e il bordo superiore */
-    margin: 10px 0 5px 0; 
+    /* Spazio tra il messaggio iniziale e il bordo superiore */
+    margin-top: 15px; 
+    margin-bottom: 5px; 
 }
 
 .rose-border.bottom-border {
-    /* Spazio tra il bordo inferiore e la foto */
-    margin: 5px 0 20px 0; 
+    /* Spazio tra il bordo inferiore e la foto */
+    margin-top: 5px; 
+    margin-bottom: 20px; 
 }
 
-
 /* ------------------------------------- */
-/* STILE PULSANTI DI AZIONE - CERCHIO */
+/* STILE PULSANTI DI AZIONE - CERCHIO (Adattati al tema) */
 /* ------------------------------------- */
 
 .buttons-circle-container {
-    display: flex;
-    justify-content: space-around; 
-    align-items: flex-end;
-    margin: 30px auto;
-    max-width: 400px;
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-end;
+    margin: 30px auto;
+    max-width: 400px;
 }
 
+/* Base per i colori dei pulsanti */
 .circle-button {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80px; 
-    height: 80px; 
-    border-radius: 50%; 
-    border: 2px solid var(--gold); 
-    color: var(--gold);
-    background-color: transparent;
-    transition: all 0.3s;
-    font-family: 'Playfair Display', serif;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    /* I bordi e i colori di default vengono sovrascritti dai temi */
+    border: 2px solid var(--gold); 
+    color: var(--gold);
+    background-color: transparent;
+    transition: all 0.3s;
+    font-family: 'Playfair Display', serif;
 }
 
 .circle-button:hover {
-    background-color: var(--gold);
-    color: var(--paper-white);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--gold); /* Hover di default */
+    color: var(--paper-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .circle-button:hover .button-icon {
-    color: var(--paper-white);
+    color: var(--paper-white);
 }
 
 .button-icon {
-    font-size: 1.5em; 
-    line-height: 1;
-    color: var(--gold);
-    transition: color 0.3s;
+    font-size: 1.5em; 
+    line-height: 1;
+    color: var(--gold);
+    transition: color 0.3s;
 }
 
 .button-text {
-    font-size: 0.7em;
-    margin-top: 5px;
-    font-weight: 600;
-    color: var(--black-text); 
+    font-size: 0.7em;
+    margin-top: 5px;
+    font-weight: 600;
+    color: var(--black-text); 
 }
 .circle-button:hover .button-text {
-    color: var(--paper-white);
+    color: var(--paper-white);
 }
 
-/* Stile speciale per RSVP (Conferma presenza) */
-.circle-button.whatsapp-confirm {
-    border-color: var(--boy-color); 
+/* ------------------------------------- */
+/* LOGICA COLORE PULSANTI IN BASE AL SESSO */
+/* ------------------------------------- */
+/* Questa sezione sovrascrive i colori gold/black per tutti i .circle-button */
+
+/* RAGAZZO: Applica AZZURRO a TUTTI i pulsanti rotondi */
+#open-state.boy .circle-button {
+    border-color: var(--boy-color);
+    color: var(--boy-color);
+}
+#open-state.boy .circle-button .button-icon {
     color: var(--boy-color);
 }
-.circle-button.whatsapp-confirm:hover {
-    background-color: var(--boy-color);
+#open-state.boy .circle-button:hover {
+    background-color: var(--boy-color);
+    color: var(--paper-white);
+}
+#open-state.boy .circle-button:hover .button-text,
+#open-state.boy .circle-button:hover .button-icon {
     color: var(--paper-white);
 }
-.circle-button.whatsapp-confirm:hover .button-icon,
-.circle-button.whatsapp-confirm:hover .button-text {
+
+/* RAGAZZA: Applica ROSA a TUTTI i pulsanti rotondi (compresi Mappa e Conferma) */
+#open-state.girl .circle-button {
+    border-color: var(--girl-color);
+    color: var(--girl-color);
+}
+#open-state.girl .circle-button .button-icon {
+    color: var(--girl-color);
+}
+#open-state.girl .circle-button:hover {
+    background-color: var(--girl-color);
+    color: var(--paper-white);
+}
+#open-state.girl .circle-button:hover .button-text,
+#open-state.girl .circle-button:hover .button-icon {
     color: var(--paper-white);
 }
 
-/* ------------------------------------- */
-/* DECORAZIONI PER SESSO */
-/* ------------------------------------- */
+/* Rimuoviamo la vecchia regola specifica per .whatsapp-confirm 
+   perché è gestita dalle nuove regole .boy/.girl qui sopra. */
+/* NON C'È PIÙ: .circle-button.whatsapp-confirm */
 
-.decorations {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Nasconde gli elementi decorativi di default */
-.teddy-bear, .balloons {
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-/* Stile per RAGAZZO */
-#open-state.boy .balloons { opacity: 1; color: var(--boy-color); }
-#open-state.boy .teddy-bear { opacity: 1; color: var(--boy-color); }
-#open-state.boy .whatsapp-confirm { border-color: var(--boy-color); color: var(--boy-color); }
-#open-state.boy .whatsapp-confirm:hover { background-color: var(--boy-color); }
-
-/* Stile per RAGAZZA */
-#open-state.girl .balloons { opacity: 1; color: var(--girl-color); }
-#open-state.girl .teddy-bear { opacity: 1; color: var(--girl-color); }
-#open-state.girl .whatsapp-confirm { border-color: var(--girl-color); color: var(--girl-color); }
-#open-state.girl .whatsapp-confirm:hover { background-color: var(--girl-color); }
 
 /* ------------------------------------- */
-/* COUNTDOWN */
+/* DECORAZIONI PER SESSO (Rimosse perché non usate) */
+/* ------------------------------------- */
+/* Rimosse le regole .decorations, .teddy-bear, .balloons */
+
+
+/* ------------------------------------- */
+/* COUNTDOWN (Nessuna modifica qui) */
 /* ------------------------------------- */
 #countdown-container {
-    margin-top: 30px;
-    padding-top: 15px;
-    border-top: 1px solid var(--gold); 
-    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid var(--gold); 
+    text-align: center;
 }
 
 #countdown {
-    color: var(--black-text); 
-    font-size: 1.1em;
-    font-weight: 600;
-    line-height: 1.5;
+    color: var(--black-text); 
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 #countdown .time-value {
-    color: var(--gold); 
-    font-size: 1.2em; 
-    font-weight: 700;
-    margin: 0 3px;
+    color: var(--gold); 
+    font-size: 1.2em; 
+    font-weight: 700;
+    margin: 0 3px;
 }
 
 /* ------------------------------------- */
-/* PULSANTI SOCIAL (CORREZIONE 3: Stili aggiornati per essere più coerenti) */
+/* PULSANTI SOCIAL (Nessuna modifica qui) */
 /* ------------------------------------- */
 .buttons-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; 
-    margin-top: 15px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    margin-top: 15px; 
 }
 .buttons-container.social-buttons {
-    flex-direction: row; 
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    gap: 10px;
+    flex-direction: row; 
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    gap: 10px;
 }
 
 .social-buttons .action-button {
-    /* CORREZIONE: Stile più compatto e meno invadente, usando il colore social */
-    padding: 8px 12px;
-    font-size: 0.8em;
-    border-radius: 5px; 
-    border: 1px solid var(--social-color); 
-    color: var(--social-color);
-    background-color: transparent;
-    transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
-    display: inline-block;
-    white-space: nowrap; /* Mantiene il testo su una riga */
+    padding: 8px 12px;
+    font-size: 0.8em;
+    border-radius: 5px; 
+    border: 1px solid var(--social-color); 
+    color: var(--social-color);
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
 }
 .social-buttons .action-button:hover {
-    background-color: var(--social-color);
-    color: var(--paper-white);
+    background-color: var(--social-color);
+    color: var(--paper-white);
 }
 
-/* Rimuove lo stile base e non specifico dell'action-button se esistente */
 .action-button {
-    text-decoration: none;
-    display: inline-block;
+    text-decoration: none;
+    display: inline-block;
 }
 
 /* ------------------------------------- */
@@ -373,19 +385,24 @@ body {
 /* ------------------------------------- */
 
 @media (max-width: 600px) {
-    /* Riduci il padding generale su schermi più piccoli */
-    #open-state {
-        padding: 30px 15px; 
+    #open-state {
+        padding: 30px 15px; 
+    }
+    /* Riduci la dimensione della foto su schermi piccoli */
+    .event-photo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
     }
-    /* Riduci la dimensione dei pulsanti cerchio su mobile */
-    .buttons-circle-container {
-        gap: 10px; 
-    }
-    .circle-button {
-        width: 70px; 
-        height: 70px;
-    }
-    .button-icon {
-        font-size: 1.4em;
-    }
+    
+    .buttons-circle-container {
+        gap: 10px; 
+    }
+    .circle-button {
+        width: 70px; 
+        height: 70px;
+    }
+    .button-icon {
+        font-size: 1.4em;
+    }
 }
