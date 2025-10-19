@@ -179,7 +179,7 @@ body {
 /* ------------------------------------- */
 .rose-border {
     text-align: center;
-    color: var(--girl-color); 
+    color: var(--boy-color); /* Colore emoji per Comunione */
     font-size: 1.2em; 
     margin: 5px 0; 
 }
@@ -195,21 +195,21 @@ body {
 
 
 /* ------------------------------------- */
-/* NUOVO STILE FOTO FESTEGGIATO (Corretto e Tondo) */
+/* STILE FOTO FESTEGGIATO (Corretto e Tondo) */
 /* ------------------------------------- */
 
 .event-photo {
-    /* CORREZIONE: Dimensioni fisse per un look compatto e centrato */
+    /* Dimensioni fisse per un look compatto e centrato */
     **width: 160px;**       
     **height: 160px;**
     
-    /* Mantiene l'area centrale visibile, tagliando i bordi extra dell'immagine */
+    /* Mantiene l'area centrale visibile, senza deformare la foto */
     **object-fit: cover;**  
     
     display: block; 
     margin: 0 auto 30px auto; 
     
-    /* CORREZIONE: Ritorna al bordo circolare */
+    /* Bordo circolare */
     **border-radius: 50%;** 
     
     border: 3px solid var(--gold); 
