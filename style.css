@@ -179,7 +179,29 @@ body {
     margin: 20px auto;
 }
 
-he la foto riempia bene lo spazio senza distorsioni */ object-fit: cover; /* Per centrarla, siccome è un elemento block */ display: block; margin: 15px auto 25px auto; /* Margine sopra, centrato, margine sotto per separarlo dalla data */ /* Forma Tonda */ border-radius: 50%;
+/* ------------------------------------- */
+/* NUOVO STILE FOTO FESTEGGIATO/SPOSI */
+/* ------------------------------------- */
+
+.event-photo {
+    /* Dimensione non troppo grande */
+    width: 160px;       
+    height: 160px;
+    
+    /* Assicura che la foto riempia bene lo spazio senza distorsioni */
+    object-fit: cover; 
+    
+    /* Per centrarla, siccome è un elemento block */
+    display: block; 
+    margin: 15px auto 25px auto; /* Margine sopra, centrato, margine sotto per separarlo dalla data */
+    
+    /* Forma Tonda */
+    border-radius: 50%; 
+    
+    /* Cornice elegante in oro */
+    border: 3px solid var(--gold); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
 
 /* ------------------------------------- */
 /* STILE PULSANTI DI AZIONE - CERCHIO */
