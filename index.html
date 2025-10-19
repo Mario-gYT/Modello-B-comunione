@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prima Comunione di [NOME FESTEGGIATO]</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Invito Comunione di Nome</title>
+    <link rel="stylesheet" href="stile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -13,72 +13,65 @@
 
     <div id="envelope-container">
 
-        <div id="closed-state">
-            <h1 class="black-text">Invito alla mia Prima Comunione</h1>
-            <label for="toggle" class="gold-button envelope-flap"></label> 
-            <label for="toggle" class="open-label">Clicca per aprire</label> 
-        </div>
-        
-        <div id="open-state" class="girl" data-gender="RAGAZZA/O"> 
-            <p class="small-text gold-text">Questo invito è per te, alla mia Comunione</p>
+        <label for="toggle" id="closed-state">
+            <div class="envelope-flap"></div>
+            <h1 class="gold-text">Clicca per aprire</h1>
+            <p class="open-label">APRI INVITO</p>
+        </label>
+
+        <div id="open-state" class="boy"> 
             
-            <p class="rose-border top-border"> ✝️​🙏​🕊️​✝️​🙏​🕊️​✝️​🙏🕊️​​✝️​🙏​🕊️​</p>
+            <p class="small-text gold-text">QUESTO INVITO È PER TE, ALLA MIA PRIMA COMUNIONE</p>
+
+            <p class="rose-border top-border"> ✝️​🙏​🍸​✝️​🙏​🍸​✝️​🙏🍸​​✝️​🙏​🍸​</p>
+
+            <h1 class="cursive-name black-text">Nome</h1>
             
-            <h1 class="main-title cursive-name black-text">[NOME FESTEGGIATO]</h1>
-            
-            <p class="rose-border bottom-border"> ✝️​🙏​🕊️​✝️​🙏​🕊️​✝️​🙏🕊️​​✝️​🙏​🕊️​</p>
-            
-            <img src="primacomunioneMBF.jpg" alt="Foto del festeggiato" class="event-photo">
-            
-            <p class="details black-text date-time">Il giorno: [GG / MM / AAAA] alle ore [HH:MM]</p>
-            
+            <img src="comunioneMBF1.jpg" alt="Foto del festeggiato" class="event-photo">
+
+            <p class="rose-border bottom-border"> ✝️​🙏​🍸​✝️​🙏​🍸​✝️​🙏🍸​​✝️​🙏​🍸​</p>
+
+            <p class="date-time">
+                Il giorno: 28 / 06 / 2026 alle ore 11:00
+            </p>
+
             <div class="separator"></div>
 
-            <p class="small-text gold-text">Dove e Quando</p>
-            
+            <p class="small-text black-text">Dove e Quando</p>
             <div class="buttons-circle-container">
                 
-                <a href="https://www.google.it/maps/dir//Duomo+di+Milano,+P.za+del+Duomo,+20122+Milano+MI/@45.4641884,9.1095247,12z/data=!4m9!4m8!1m0!1m5!1m1!1s0x4786c6aec34636a1:0xab7f4e27101a2e13!2m2!1d9.1919265!2d45.4640976!3e0?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="circle-button church-map" title="Posizione Chiesa">
-                    <span class="button-icon">⛪</span>
-                    <span class="button-text">Chiesa</span>
+                <a href="https://wa.me/393511938137?text=Sarò/Saremo%20al%20Battesimo%20di%20[Nome]" class="circle-button whatsapp-confirm">
+                    <i class="fas fa-check button-icon"></i>
+                    <span class="button-text">Conferma</span>
                 </a>
                 
-                <a href="https://www.google.it/maps/dir//Duomo+di+Milano,+P.za+del+Duomo,+20122+Milano+MI/@45.4641884,9.1095247,12z/data=!4m9!4m8!1m0!1m5!1m1!1s0x4786c6aec34636a1:0xab7f4e27101a2e13!2m2!1d9.1919265!2d45.4640976!3e0?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="circle-button restaurant-map" title="Posizione Ristorante">
-                    <span class="button-icon">🍽️</span>
+                <a href="https://www.google.it/maps/dir//45.49018,9.21959/@45.4486286,9.1008667,10.58z/data=!4m8!1m5!3m4!2zNDXCsDI5JzI0LjciTiA5wrAxMycxMC41IkU!8m2!3d45.49018!4d9.21959!4m1!3e0?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" class="circle-button">
+                    <i class="fas fa-church button-icon"></i>
+                    <span class="button-text">Chiesa</span>
+                </a>
+
+                <a href="https://www.google.it/maps/dir//45.49018,9.21959/@45.4486286,9.1008667,10.58z/data=!4m8!1m5!3m4!2zNDXCsDI5JzI0LjciTiA5wrAxMycxMC41IkU!8m2!3d45.49018!4d9.21959!4m1!3e0?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" class="circle-button">
+                    <i class="fas fa-utensils button-icon"></i>
                     <span class="button-text">Ristorante</span>
                 </a>
                 
-                <a href="https://wa.me/393511938147?text=Sarò/Saremo%20alla%20Prima%20Comunione%20di%20[NOME]" target="_blank" class="circle-button whatsapp-confirm" title="Conferma Presenza">
-                    <span class="button-icon">✅</span>
-                    <span class="button-text">Conferma</span>
-                </a>
             </div>
 
             <div id="countdown-container">
-                <div id="countdown" class="gold-text">Caricamento...</div>
+                <p class="small-text black-text">Manca a:</p>
+                <div id="countdown">Caricamento...</div>
             </div>
 
-            <p class="details black-text" style="margin-top: 40px;">Invito creato da:</p>
+            <div class="separator"></div>
+
+            <p class="small-text black-text">Invito creato da:</p>
             <div class="buttons-container social-buttons">
-                <a href="https://www.tiktok.com/@mg_digital_invitations?_t=ZN-90gBWuIQhAk&_r=1" target="_blank" class="action-button">
-                    MG_digital_invitations: TikTok
-                </a>
-                <a href="https://www.instagram.com/_mariogyt_/" target="_blank" class="action-button">
-                    Mario G.: Instagram
-                </a> 
-                <a href="https://www.youtube.com/@MariogYT." target="_blank" class="action-button">
-                    Mario G.: Youtube
-                </a>
-                <a href="https://www.tiktok.com/@mariogyt_?_t=ZN-90gBc2FwNWQ&_r=1" target="_blank" class="action-button">
-                    Mario G.: TikTok
-                </a>
+                <a href="https://www.tiktok.com/@mg_digital_invitations?_t=ZN-90ga6UeK5MF&_r=1" class="action-button">MG_digital_invitations: TikTok</a>
+                <a href="https://www.instagram.com/_mariogyt_/" class="action-button">Mario G.: Instagram</a>
+                <a href="https://www.youtube.com/@MariogYT." class="action-button">Mario G.: Youtube</a>
+                <a href="https://www.tiktok.com/@mariogyt_?_t=ZN-90ga4TNEZ8w&_r=1" class="action-button">Mario G.: TikTok</a>
             </div>
-            
-        </div>
 
-    </div>
-    
-    <script src="countdown.js"></script>
-
+        </div> </div> <script src="contoallrovescia.js"></script>
 </body>
 </html>
