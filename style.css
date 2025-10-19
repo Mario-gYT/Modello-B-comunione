@@ -180,27 +180,27 @@ body {
 }
 
 /* ------------------------------------- */
-/* NUOVO STILE FOTO FESTEGGIATO/SPOSI */
+/* STILE BORDI EMOJI PERSONALIZZATI */
 /* ------------------------------------- */
 
-.event-photo {
-    /* Dimensione non troppo grande */
-    width: 160px;       
-    height: 160px;
-    
-    /* Assicura che la foto riempia bene lo spazio senza distorsioni */
-    object-fit: cover; 
-    
-    /* Per centrarla, siccome è un elemento block */
-    display: block; 
-    margin: 15px auto 25px auto; /* Margine sopra, centrato, margine sotto per separarlo dalla data */
-    
-    /* Forma Tonda */
-    border-radius: 50%; 
-    
-    /* Cornice elegante in oro */
-    border: 3px solid var(--gold); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+.rose-border {
+    /* Assicurati che il testo sia centrato */
+    text-align: center;
+    /* Usa il colore del tema ragazza (rosa) per l'emoji */
+    color: var(--girl-color); 
+    /* Rimuove i margini di default che <p> ha */
+    margin: 5px 0; 
+    /* Allinea bene le emoji */
+    font-size: 1.2em;
+}
+
+.rose-border.top-border {
+    margin-bottom: 20px; /* Spazio prima del Nome */
+}
+
+.rose-border.bottom-border {
+    margin-top: 20px; /* Spazio dopo il Nome */
+    margin-bottom: 15px; /* Spazio prima della Foto */
 }
 
 
