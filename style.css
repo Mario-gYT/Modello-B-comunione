@@ -360,53 +360,6 @@ body {
 
 
 
-/* ------------------------------------- */
-
-/* NUOVO STILE BORDI EMOJI PERSONALIZZATI */
-
-/* ------------------------------------- */
-
-
-
-.rose-border {
-
-    /* Assicurati che il testo sia centrato */
-
-    text-align: center;
-
-    /* Usa il colore del tema ragazza (rosa) per l'emoji */
-
-    color: var(--girl-color); 
-
-    /* Rimuove i margini di default del <p> */
-
-    font-size: 1.2em; /* Dimensione emoji */
-
-}
-
-
-
-.rose-border.top-border {
-
-    /* Spazio tra il messaggio iniziale e il bordo superiore */
-
-    margin: 10px 0 5px 0; 
-
-}
-
-
-
-.rose-border.bottom-border {
-
-    /* Spazio tra il bordo inferiore e la foto */
-
-    margin: 5px 0 20px 0; 
-
-}
-
-
-
-
 
 /* ------------------------------------- */
 
